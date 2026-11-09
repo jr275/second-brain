@@ -1,0 +1,19 @@
+name: shellcheck
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ShellCheck
+        run: shellcheck install.sh scripts/*.sh
+      - name: Instalação de teste
+        run: |
+          git config --global user.name "CI"
+          git config --global user.email "ci@example.com"
+          ./install.sh --path "$RUNNER_TEMP/vault" --theme "Teste"
+          ./scripts/doctor.sh --path "$RUNNER_TEMP/vault" || true

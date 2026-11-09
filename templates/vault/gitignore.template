@@ -1,0 +1,11 @@
+# Estado de janelas do Obsidian: muda o tempo todo
+.obsidian/workspace*
+
+# Fontes originais: imutáveis e protegidas pelo backup (Time Machine)
+raw/
+
+# Área de triagem: conteúdo ainda não aprovado
+inbox/
+
+# Sistema
+.DS_Store
